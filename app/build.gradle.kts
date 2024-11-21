@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.maplab"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.maplab"
@@ -33,10 +33,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    packaging { resources.excludes.add("META-INF/*") }
 }
 
 dependencies {
 
+    implementation("com.hivemq:hivemq-mqtt-client:1.3.3")
     implementation ("com.google.android.gms:play-services-maps:17.0.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
